@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>昆州判案錄</title>
+<meta name="description" content="真實昆士蘭判決改編嘅法律劇情遊戲：中文敘述＋英文法律術語。">
+<meta name="theme-color" content="#141a2e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="判案錄">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);box-sizing:border-box}
+[hidden]{display:none!important}
+img{max-width:100%}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <div class="hud">
+    <button class="pill" id="homeBtn" type="button" aria-label="返案件檔案櫃">檔案櫃</button>
+    <div class="chap" id="chap">昆州判案錄</div>
+    <button class="pill score" id="scoreBtn" type="button">分 <b id="score">0</b></button>
+    <button class="pill" id="evBtn" type="button">證據 <b id="evN">0</b></button>
+    <button class="pill" id="dictBtn" type="button">詞典 <b id="dictN">0</b></button>
+  </div>
+  <div class="stage" id="stage">
+    <div class="portrait" id="portrait" hidden></div>
+    <div class="chapcard" id="chapcard" hidden></div>
+  </div>
+  <div class="panel" id="panel" aria-live="polite"></div>
+</div>
+<script src="js/glossary.js"></script>
+<script src="js/engine.js"></script>
+<script src="cases/c01.js"></script>
+<script src="cases/c02.js"></script>
+<script src="cases/c03.js"></script>
+<script src="cases/c04.js"></script>
+<script src="cases/c05.js"></script>
+<script>
+window.QCF_SOON=[
+  {cat:"crim",title:"刑事案件：輕微罪行與判刑"},
+  {cat:"family",title:"子女安排：搬遷爭議"},
+  {cat:"debt",title:"租務按金：業主唔還 bond"},
+  {cat:"dv",title:"違反保護令"}
+];
+if("serviceWorker" in navigator){ window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{})); }
+</script>
+</body>
+</html>

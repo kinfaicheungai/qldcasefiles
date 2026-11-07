@@ -1,0 +1,17 @@
+{
+  "name": "昆州判案錄",
+  "short_name": "判案錄",
+  "description": "真實昆士蘭判決改編嘅法律劇情遊戲",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#141a2e",
+  "theme_color": "#141a2e",
+  "lang": "zh-Hant-HK",
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}

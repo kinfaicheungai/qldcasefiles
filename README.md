@@ -1,0 +1,26 @@
+# 昆州判案錄 Queensland Case Files
+
+一個以真實昆士蘭判決改編嘅法律劇情遊戲（PWA）。中文敘述＋英文法律術語，可以加到 iPhone / iPad 主畫面離線玩。
+
+## 案件
+| # | 範疇 | 標題 | 真實判決 |
+|---|---|---|---|
+| 01 | 遺產 | 一份遺囑，兩兄弟 | Madjeric v Madjeric [2025] QDC 126 |
+| 02 | 遺產 | 一條未發出的短訊 | Re Nichol; Nichol v Nichol [2017] QSC 220 |
+| 03 | 家暴 | 我知道你住邊 | FAJ v FJH [2024] QDC 23 |
+| 04 | 錢債 | 阿爸借定送？ | Lopez v Lopez [2018] QCATA 158 |
+| 05 | 生意 | 完美的宣傳冊 | Babstock v Laurel Star (No 5) [2024] QCA 3 |
+
+人名已更改；每道題目附判詞段落出處。遊戲用作學習，唔係法律意見。
+
+## 結構
+- `index.html` — 外殼
+- `js/engine.js` — 劇情引擎；`js/glossary.js` — 共用中英詞典
+- `cases/cNN.js` — 每單案一個檔（劇本、證據、專屬術語）
+- `img/` — Higgsfield 生成嘅卡通場景同角色
+- `sw.js` — 離線快取。**每次更新記得改 `VERSION`**
+
+## 加新案件
+1. 新增 `cases/c06.js`，用 `QCF.register({...})`
+2. 喺 `index.html` 加 `<script src="cases/c06.js">`
+3. 喺 `sw.js` 嘅 `CORE` 加檔案，並將 `VERSION` 加一
