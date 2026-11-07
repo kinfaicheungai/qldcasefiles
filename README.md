@@ -18,9 +18,10 @@
 - `js/engine.js` — 劇情引擎；`js/glossary.js` — 共用中英詞典
 - `cases/cNN.js` — 每單案一個檔（劇本、證據、專屬術語）
 - `img/` — Higgsfield 生成嘅卡通場景同角色
-- `sw.js` — 離線快取。**每次更新記得改 `VERSION`**
+- `js/version.js` — 版本號（顯示喺主畫面）。**每次更新記得加一**，離線快取會跟住更新
+- `sw.js` — 離線快取
 
 ## 加新案件
 1. 新增 `cases/c06.js`，用 `QCF.register({...})`
 2. 喺 `index.html` 加 `<script src="cases/c06.js">`
-3. 喺 `sw.js` 嘅 `CORE` 加檔案，並將 `VERSION` 加一
+3. 喺 `sw.js` 嘅 `CORE` 加檔案，並將 `js/version.js` 嘅版本加一

@@ -71,13 +71,13 @@ function showHub(){
   const cats=["all",...new Set(QCF.cases.map(c=>c.cat))];
   h.innerHTML=`<div class="hub-head" style="background-image:url(${imgSrc("bg_office")})"><div class="inner">
       <div class="eyebrow">Queensland Case Files</div><h1>昆州判案錄</h1>
-      <div style="color:var(--muted);font-size:14px">真實昆士蘭判決改編・中文敘述＋英文法律術語</div></div></div>
+      <div style="color:var(--muted);font-size:14px">真實昆士蘭判決改編・中文敘述＋英文法律術語</div><div class="ver">版本 v${window.QCF_VERSION||"?"}・${window.QCF_BUILD||""}</div></div></div>
     <div class="career"><div class="n">${got}</div><div class="grow"><div class="r">${rankOf(total?got/total:0)}</div>
       <div class="sub">已結案 ${done} / ${QCF.cases.length}・詞典 ${store.dict.length}</div><div class="bar"><i style="width:${total?Math.round(got/total*100):0}%"></i></div></div>
       <button class="pill" type="button" id="hubDict">詞典</button></div>
     <div class="filters" role="toolbar" aria-label="篩選範疇">${cats.map(k=>`<button type="button" data-f="${k}" aria-pressed="${filter===k}">${k==="all"?"全部":CAT[k]}</button>`).join("")}</div>
     <div class="cases" id="caseList"></div>
-    <p class="fine" style="padding:8px max(20px,env(safe-area-inset-left,0px)) 0;margin:0;font-size:12px;color:#7d86a8">所有案件取材自公開判詞，人名已更改，每題附判詞段落出處。遊戲用作學習，唔係法律意見；遇到真實問題請諮詢律師或 Legal Aid Queensland（1300 65 11 88）。</p>`;
+    <p class="fine" style="padding:8px max(20px,env(safe-area-inset-left,0px)) 0;margin:0;font-size:12px;color:#7d86a8">所有案件取材自公開判詞，人名已更改，每題附判詞段落出處。遊戲用作學習，唔係法律意見；遇到真實問題請諮詢律師或 Legal Aid Queensland（1300 65 11 88）。<br>昆州判案錄 v${window.QCF_VERSION||"?"}（${window.QCF_BUILD||""}）</p>`;
   $("#app").append(h);
   const list=h.querySelector("#caseList");
   QCF.cases.filter(c=>filter==="all"||c.cat===filter).forEach((c,ix)=>{

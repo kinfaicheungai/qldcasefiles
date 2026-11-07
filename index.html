@@ -37,6 +37,7 @@ img{max-width:100%}
   </div>
   <div class="panel" id="panel" aria-live="polite"></div>
 </div>
+<script src="js/version.js"></script>
 <script src="js/glossary.js"></script>
 <script src="js/engine.js"></script>
 <script src="cases/c01.js"></script>
@@ -51,7 +52,11 @@ window.QCF_SOON=[
   {cat:"debt",title:"租務按金：業主唔還 bond"},
   {cat:"dv",title:"違反保護令"}
 ];
-if("serviceWorker" in navigator){ window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{})); }
+if("serviceWorker" in navigator){
+  const hadSW=!!navigator.serviceWorker.controller; let reloaded=false;
+  navigator.serviceWorker.addEventListener("controllerchange",()=>{ if(hadSW&&!reloaded){ reloaded=true; location.reload(); } });
+  window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").then(r=>r.update()).catch(()=>{}));
+}
 </script>
 </body>
 </html>

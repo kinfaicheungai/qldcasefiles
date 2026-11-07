@@ -1,8 +1,9 @@
 /* Offline cache. Bump VERSION on every deploy so installed devices pick up new cases. */
-const VERSION = "qcf-v2";
+importScripts("js/version.js");
+const VERSION = "qcf-" + self.QCF_VERSION;
 const CORE = [
   "./", "index.html", "style.css", "manifest.webmanifest",
-  "js/glossary.js", "js/engine.js",
+  "js/version.js", "js/glossary.js", "js/engine.js",
   "cases/c01.js", "cases/c02.js", "cases/c03.js", "cases/c04.js", "cases/c05.js",
   "icons/icon-180.png", "icons/icon-192.png", "icons/icon-512.png",
   "img/bg_office.webp", "img/bg_court.webp", "img/bg_gate.webp", "img/bg_home.webp",
