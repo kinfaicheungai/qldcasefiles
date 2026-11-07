@@ -54,7 +54,7 @@ const S = [
  {predict:{img:"l_father", intro:"審裁員準備宣佈決定。輪到你估。", button:"宣佈決定", items:[
    {q:"$10,000 係？", short:"$10,000", opts:["借款，要還","贈與，唔使還"], answer:0, pts:10},
    {q:"$5,000 呢？", short:"$5,000", opts:["有俾過，而且係借款","冇足夠證據證明俾過"], answer:0, pts:10}]}},
- {who:"審裁員", img:"l_member", judge:1, text:"兩筆都係借款。答辯人須於 14 日內向申請人支付 **$15,000**。", ref:"判詞第 3、8、12–13 段"},
+ {who:"審裁員", img:"l_member", judge:1, ruling:{en:"I find that both sums were loans, not gifts. There was an {{legalrel}}, and the evidence is sufficient to {{rebut}} any {{advancement}}. The respondent is to pay the applicant $15,000 within 14 days.", zh:"本席裁定兩筆款項都係借款，唔係贈與。雙方有建立法律關係嘅意圖，證據亦足以推翻任何贈與推定。答辯人須於 14 日內向申請人支付 $15,000。"}, ref:"判詞第 3、8–9、12–13 段"},
  {who:"May 姐", img:"c_mentor", text:"細心啲睇：Colin 追 $15,698，判 $15,000。判決冇解釋點解，上訴時亦冇人追究，因為係 Dean 上訴。", ref:"判詞第 4 段"},
 
  {ch:"第三幕", title:"上訴", sub:"QCAT 上訴審裁處", bg:"bg_qcat"},
@@ -77,6 +77,7 @@ const S = [
    {t:"批准上訴，發還重審", fb:"審裁員搵唔到錯誤，冇理由發還。"},
    {t:"改判 $10,000 為贈與", fb:"上訴審裁員冇推翻任何事實裁斷。"}
  ]},
+ {who:"審裁員", img:"l_member", judge:1, ruling:{en:"An appeal is not a retrial. The applicant has shown no arguable error of law, and no finding that is {{glaring}}. The {{credit|credit}} findings were for the adjudicator. The application for {{leave}} is {{dismissed}}.", zh:"上訴唔係重新審訊。申請人未能指出任何可爭辯嘅法律錯誤，亦冇任何明顯不可能嘅事實裁斷。可信度屬原審審裁員嘅判斷。上訴許可申請駁回。"}, ref:"判詞第 15–20 段"},
  {who:"May 姐", img:"c_mentor", text:"教訓好簡單：借錢俾屋企人，寫低條款、雙方簽名、用銀行轉賬留紀錄。收據要影相備份。"},
  {who:"May 姐", img:"c_mentor", text:"另外記住：拎到判決唔等於拎到錢。對方唔還，仲要另外申請執行判決。"},
  {end:1}

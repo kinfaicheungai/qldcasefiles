@@ -155,3 +155,19 @@ body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--f-body)
 .case.soon{opacity:.45;cursor:default}
 .cw{font-size:13px;color:#ffcfbf;background:#40262a;border-radius:8px;padding:6px 10px}
 .back{font:inherit;font-size:13px;color:var(--paper);background:transparent;border:1px solid #3a4673;border-radius:999px;padding:3px 10px;cursor:pointer}
+
+/* ---------- English ruling card ---------- */
+.ruling{display:grid;gap:10px;background:#f3eee2;color:#1b2238;border-radius:12px;padding:14px 16px;box-shadow:0 6px 24px #0006}
+.rl-label{font-family:var(--f-law);font-size:11px;letter-spacing:.14em;color:#6a5aa8}
+.rl-en{font-family:var(--f-law);font-size:18px;line-height:1.6}
+.ruling .term{border-color:#6a5aa8;background:#6a5aa81a;color:#1b2238}
+.ruling .term i{color:#4b3b8f}
+.ruling .term small{color:#5b6280}
+.ruling .money{color:#8a5a00}
+.rl-ctrl{display:flex;gap:8px;flex-wrap:wrap}
+.say,.zhbtn{font:inherit;font-size:14px;border-radius:999px;padding:5px 14px;cursor:pointer;border:1px solid #6a5aa8;background:transparent;color:#4b3b8f}
+.say.on{background:#6a5aa8;color:#fff}
+.say[data-r="1"]{background:#4b3b8f;color:#fff;border-color:#4b3b8f}
+.say[data-r="1"].on{background:#2c215e}
+.rl-zh{font-family:var(--f-display);font-size:16px;line-height:1.6;color:#3a3150;border-top:1px dashed #b9b0d6;padding-top:8px}
+.say.mini{font-size:12px;padding:1px 10px;margin-left:8px;vertical-align:middle;color:#d7cbff;border-color:#a58bf0}

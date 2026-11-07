@@ -93,7 +93,8 @@ const S = [
  {predict:{img:"c_judge", intro:"宣判之前，輪到你估。", button:"宣判", items:[
    {q:"上訴結果係？", short:"上訴結果", opts:["駁回上訴，保護令維持","撤銷保護令，申請直接駁回","撤銷原判，發還裁判法院重審"], answer:2, pts:20},
    {q:"上訴法官有冇推翻「Frank 做過家暴」嘅裁決？", short:"家暴裁決", opts:["有，裁定 Frank 冇做家暴","冇，呢點上訴時冇被挑戰"], answer:1, pts:10}]}},
- {who:"法官", img:"c_judge", judge:1, text:"撤銷 2022 年 10 月 19 日嘅決定。申請人嘅申請**{{remit}}** Gympie 裁判法院依法重新裁決，宜由另一位裁判官處理。", ref:"判詞第 35 段"},
+ {who:"法官", img:"c_judge", judge:1, ruling:{en:"The magistrate focused on the aggrieved's concerns and on holding the respondent accountable, but did not assess the risk of future domestic violence if no order were made. The finding that an order was {{necdes}} cannot stand.", zh:"裁判官集中考慮受害人嘅擔憂，同要答辯人為行為負責，但冇評估如果冇命令，將來發生家暴嘅風險。因此，「命令屬必要或可取」嘅裁斷唔能夠成立。"}, ref:"判詞第 20–21 段"},
+ {who:"法官", img:"c_judge", judge:1, ruling:{en:"{{allowed|The appeal is allowed}}. The decision of 19 October 2022 is {{setaside}}, and the application is {{remit|remitted}} to the Magistrates Court at Gympie to be determined according to law, preferably by a different magistrate.", zh:"上訴得直。撤銷 2022 年 10 月 19 日嘅決定，申請發還 Gympie 裁判法院依法重新裁決，最好由另一位裁判官處理。"}, ref:"判詞第 35 段"},
  {who:"May 姐", img:"c_mentor", text:"留意：上訴法官**冇話** Helen 唔需要保護，亦冇話 Frank 冇做家暴。佢只係話原審冇用啱方法評估將來風險，所以要重新審過。"},
  {who:"May 姐", img:"c_mentor", text:"呢類案好多當事人冇律師。你將來做傳譯都會見到：法官會特別留意雙方有冇公平機會講清楚自己嘅情況。"},
  {end:1}

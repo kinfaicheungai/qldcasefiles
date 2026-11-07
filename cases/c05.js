@@ -75,7 +75,9 @@ const S = [
  {predict:{img:"c_judge", intro:"上訴庭準備宣判。輪到你估。", button:"宣判", items:[
    {q:"上訴結果？", short:"上訴結果", opts:["維持一審，買家贏","推翻一審，賣方贏"], answer:1, pts:10}],
    slider:{label:"如果賣方贏，買家要賠幾多（連利息計到一審判決日）？", min:0, max:400000, step:5000, start:100000, answer:189228, near:20000, far:60000, ptsNear:20}}},
- {who:"法官", img:"c_judge", judge:1, text:"上訴得直。判賣方勝訴，買方須支付 **$189,227.65**，另加之後嘅利息，並負擔上訴同區域法院嘅訟費。", ref:"判詞第 22–23、80、82 段"},
+ {who:"法官", img:"c_judge", judge:1, ruling:{en:"The representations in the sale booklet were misleading. However, the buyer has not proved {{reliance}} on them, and the information from its own {{dd}} agent broke the chain of {{causation}}.", zh:"銷售冊嘅陳述屬誤導。不過，買方未能證明佢依賴咗呢啲陳述；而且佢自己盡職調查代理提供嘅資料，已經切斷咗因果鏈。"}, ref:"判詞第 29、68、74 段"},
+ {who:"法官", img:"c_judge", judge:1, ruling:{en:"Because the contract allowed defective properties to be excluded, no loss was proved, and the contracts could not be declared {{voidab}} under {{s237|section 237}}.", zh:"由於合約容許剔走有問題嘅物業，買方證明唔到有損失，所以唔可以根據第 237 條宣佈合約自始無效。"}, ref:"判詞第 76–78 段"},
+ {who:"法官", img:"c_judge", judge:1, ruling:{en:"{{allowed|The appeal is allowed}}. There will be {{judgmentfor}} the sellers against the respondents in the sum of $189,227.65, plus {{interest}}, and the respondents must pay the {{costs}} of the appeal and of the District Court proceedings.", zh:"上訴得直。判賣方勝訴，答辯人須支付 $189,227.65 另加利息，並負擔上訴同區域法院嘅訟費。"}, ref:"判詞第 80、82 段"},
  {who:"May 姐", img:"c_mentor", text:"拆開嚟睇：按金餘額 $41,500，加收入損失 $86,729.30，加管理權價值損失 $43,633.83，共 $171,863.13；計埋利息到 2023 年 2 月 10 日，就係 $189,227.65。", ref:"判詞第 22–23 段"},
  {who:"May 姐", img:"c_mentor", text:"Dot 係擔保人，冇另外提出論點，所以擔保部分跟住同一個結果。", ref:"判詞第 79 段"},
  {who:"May 姐", img:"c_mentor", text:"教訓：盡職調查見到嘅問題，就算你冇追問，法院都會當你知道。用盡合約機制，唔好等到交收前一日先發難。"},

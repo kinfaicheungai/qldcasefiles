@@ -1,5 +1,17 @@
 /* Shared bilingual legal glossary: key -> {en, zh, d} */
 window.QCF_GLOSSARY = {
+  contingencies:{en:"contingencies of life",zh:"人生中的意外變故",d:"例如患病、失業、意外。家庭供養案常問申請人有冇足夠緩衝應付。"},
+  foreseeable:{en:"reasonably foreseeable",zh:"可合理預見",d:"一個合理嘅人當時可以預計到會發生。"},
+  allowed:{en:"the appeal is allowed",zh:"上訴得直",d:"上訴人勝訴，上訴法院會改變原審結果。相反係 dismissed（駁回）。"},
+  dismissed:{en:"dismissed",zh:"駁回",d:"法院拒絕申請或上訴。"},
+  setaside:{en:"set aside",zh:"撤銷",d:"上訴法院取消原審嘅決定或命令。"},
+  pursuant:{en:"pursuant to",zh:"根據",d:"判詞常用語，即係「根據某條法例」。"},
+  dispensed:{en:"dispensed with",zh:"豁免",d:"法院免除某項法定要求。"},
+  judgmentfor:{en:"judgment for",zh:"判……勝訴",d:"例如 judgment for the sellers，即係判賣方勝訴。"},
+  interest:{en:"interest",zh:"利息",d:"判決金額之外，按法定利率計算嘅利息。"},
+  satisfied:{en:"I am satisfied that",zh:"本庭信納",d:"法官表示已經達到舉證標準、接納某事實嘅慣用語。"},
+  rebut:{en:"rebut",zh:"推翻（推定）",d:"用證據推翻法律上嘅推定。"},
+  submissions:{en:"submissions",zh:"陳詞",d:"雙方向法院提交嘅法律論點，可以係書面或口頭。"},
   will:{en:"will",zh:"遺囑",d:"列明死後財產點分配嘅法律文件。"},
   testator:{en:"testator",zh:"立遺囑人",d:"訂立遺囑嘅人；本案即係過身嘅媽媽。"},
   estate:{en:"estate",zh:"遺產",d:"死者留低嘅所有財產，扣除債務之後先分配。"},

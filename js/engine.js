@@ -22,11 +22,28 @@ function fmt(s){
   if(!s) return "";
   s = s.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
   s = money(s);
-  return s.replace(/\{\{(\w+)\}\}/g, (m,k) => { const g=G[k]; if(!g) return k;
-    return `<button type="button" class="term" data-k="${k}"><i>${g.en}</i><small>${g.zh}</small></button>`; });
+  return s.replace(/\{\{(\w+)(?:\|([^}]+))?\}\}/g, (m,k,shown) => { const g=G[k]; if(!g) return shown||k;
+    return `<button type="button" class="term" data-k="${k}"><i>${shown||g.en}</i><small>${g.zh}</small></button>`; });
 }
+/* plain English for speech: {{k|shown}} -> shown, {{k}} -> term */
+function plain(s){
+  return s.replace(/\{\{(\w+)(?:\|([^}]+))?\}\}/g,(m,k,shown)=>shown||(G[k]?G[k].en.split(" / ")[0].replace(/\s*\(.*?\)/g,""):k)).replace(/\*\*/g,"");
+}
+/* ---------- speech (Web Speech API, works offline on iOS) ---------- */
+let voice=null;
+function pickVoice(){ const vs=(window.speechSynthesis&&speechSynthesis.getVoices())||[];
+  voice = vs.find(v=>/en-AU/i.test(v.lang)) || vs.find(v=>/en-GB/i.test(v.lang)) || vs.find(v=>/^en/i.test(v.lang)) || null; }
+if(window.speechSynthesis){ pickVoice(); speechSynthesis.onvoiceschanged=pickVoice; }
+function speak(text,rate,onend){
+  if(!window.speechSynthesis){ alertBox("呢部機唔支援朗讀功能。"); return; }
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text); u.lang=voice?voice.lang:"en-AU"; if(voice) u.voice=voice; u.rate=rate||1;
+  if(onend){ u.onend=onend; u.onerror=onend; }
+  speechSynthesis.speak(u);
+}
+function alertBox(msg){ const d=document.createElement("div"); d.className="fb"; d.textContent=msg; $("#panel").prepend(d); }
 function learn(k){ if(G[k] && !store.dict.includes(k)){ store.dict.push(k); persist(); } hud(); }
-function learnIn(s){ (s||"").replace(/\{\{(\w+)\}\}/g,(m,k)=>{learn(k);return m}); }
+function learnIn(s){ (s||"").replace(/\{\{(\w+)(?:\|[^}]+)?\}\}/g,(m,k)=>{learn(k);return m}); }
 function hud(){ if(!st) return; $("#score").textContent=st.score; $("#evN").textContent=st.ev.length; $("#dictN").textContent=store.dict.length; }
 function save(){ if(C){ store.prog[C.id] = st; persist(); } }
 
@@ -113,6 +130,7 @@ function setPortrait(k){ const p=$("#portrait"); if(!k){p.hidden=true;return}
 function chapterOf(i){ for(let j=i;j>=0;j--) if(S[j].ch) return S[j]; return null; }
 
 function render(){
+  if(window.speechSynthesis) speechSynthesis.cancel();
   const n=S[st.i]; const panel=$("#panel"); panel.innerHTML="";
   const c=chapterOf(st.i); if(c){ $("#chap").textContent=`${c.ch}・${c.title}`; setBg(c.bg); }
   if(n.bg) setBg(n.bg);
@@ -122,6 +140,7 @@ function render(){
   if(n.predict) return renderPredict(n.predict);
   setPortrait(n.img||null);
   if(n.q) return n.multi?renderMulti(n):renderChoice(n);
+  if(n.ruling) return renderRuling(n);
   const narr = n.who==="旁白"||n.who==="回憶"||!n.who;
   const who=document.createElement("div"); who.className="who"+(narr?" narr":"")+(n.judge?" judge":""); who.textContent=n.who||"旁白"; panel.append(who);
   const t=document.createElement("div"); t.className="text"; t.innerHTML=fmt(n.text); panel.append(t); learnIn(n.text); (n.terms||[]).forEach(learn);
@@ -129,6 +148,24 @@ function render(){
   if(n.ref){ const r=document.createElement("div"); r.className="fb"; r.innerHTML=`<span class="ref" style="margin:0">出處：${n.ref}</span>`; panel.append(r); }
   if(n.gain){ if(!st.ev.includes(n.gain)){ st.ev.push(n.gain); hud(); } panel.append(gainEl(n.gain)); }
   panel.append(nextBtn()); panel.scrollTop=0; save();
+}
+function renderRuling(n){
+  const panel=$("#panel");
+  const who=document.createElement("div"); who.className="who judge"; who.textContent=n.who; panel.append(who);
+  const box=document.createElement("div"); box.className="ruling";
+  box.innerHTML=`<div class="rl-label">JUDGMENT · 判決（英文摘要）</div><div class="rl-en">${fmt(n.ruling.en)}</div>
+    <div class="rl-ctrl"><button type="button" class="say" data-r="1">▶ 朗讀</button><button type="button" class="say" data-r="0.75">慢速</button><button type="button" class="zhbtn" aria-expanded="false">中文意思</button></div>
+    <div class="rl-zh" hidden>${money(n.ruling.zh)}</div>`;
+  panel.append(box); learnIn(n.ruling.en);
+  const text=plain(n.ruling.en);
+  box.querySelectorAll(".say").forEach(b=>b.onclick=()=>{
+    const playing=b.classList.contains("on"); speechSynthesis&&speechSynthesis.cancel(); box.querySelectorAll(".say").forEach(x=>x.classList.remove("on"));
+    if(playing) return; b.classList.add("on"); speak(text,+b.dataset.r,()=>b.classList.remove("on")); });
+  const zb=box.querySelector(".zhbtn"), zh=box.querySelector(".rl-zh");
+  zb.onclick=()=>{ zh.hidden=!zh.hidden; zb.setAttribute("aria-expanded",String(!zh.hidden)); };
+  if(n.ref){ const r=document.createElement("div"); r.className="fb"; r.innerHTML=`<span class="ref" style="margin:0">出處：${n.ref}</span>`; panel.append(r); }
+  const nb=nextBtn(); const old=nb.onclick; nb.onclick=()=>{ if(window.speechSynthesis) speechSynthesis.cancel(); old(); };
+  panel.append(nb); panel.scrollTop=0; save();
 }
 function quoteEl(q){ const d=document.createElement("div"); d.className="quote"; d.innerHTML=`<div class="en">${q.en}</div><div class="zh">${q.zh}</div><div class="src">${q.src}</div>`; return d; }
 function gainEl(k){ const d=document.createElement("div"); d.className="gain"; d.innerHTML=`<span class="badge">證據</span><div><b>${E[k].t}</b><div style="font-size:13px;color:var(--muted)">已收入證據夾</div></div>`; return d; }
@@ -233,7 +270,8 @@ function sheet(title,html){
 }
 function allTerms(){ const all=Object.assign({},window.QCF_GLOSSARY); QCF.cases.forEach(c=>Object.assign(all,c.terms||{})); return all; }
 function openTerm(k){ learn(k); const g=G[k]||allTerms()[k];
-  sheet("法律詞語",`<div class="entry"><div class="en">${g.en}</div><div class="zh">${g.zh}</div><div class="d">${g.d}</div></div><div class="empty">已收入你嘅詞典（${store.dict.length} / ${Object.keys(allTerms()).length}）</div>`); }
+  sheet("法律詞語",`<div class="entry"><div class="en">${g.en} <button type="button" class="say mini" id="sayTerm">▶ 讀音</button></div><div class="zh">${g.zh}</div><div class="d">${g.d}</div></div><div class="empty">已收入你嘅詞典（${store.dict.length} / ${Object.keys(allTerms()).length}）</div>`);
+  const b=document.getElementById("sayTerm"); if(b) b.onclick=()=>speak(g.en.split(" / ")[0].replace(/\s*\(.*?\)/g,""),0.85); }
 function openDict(){
   const all=allTerms(); const keys=Object.keys(all);
   const known=keys.filter(k=>store.dict.includes(k)), unknown=keys.length-known.length;

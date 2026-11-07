@@ -81,8 +81,9 @@ const S = [
  {predict:{img:"c_judge", intro:"宣判之前，輪到你估。", button:"宣判", items:[
    {q:"呢條冇發出嘅短訊，算唔算 Matt 嘅遺囑？", short:"短訊算唔算遺囑", opts:["算，法院根據 s 18 接納","唔算，遺產按無遺囑分配俾 Jo 同 Tony"], answer:0, pts:20},
    {q:"Jo 輸咗嘅話，佢嘅訟費點算？", short:"Jo 嘅訟費", opts:["大部分由遺產支付","Jo 自己全數負擔","Jo 要連對方訟費一齊俾"], answer:0, pts:10}]}},
- {who:"法官", img:"c_judge", judge:1, text:"本庭根據 s 18 豁免簽立要求，宣佈該條**未發出嘅短訊係死者嘅遺囑**，並由 Dave 同 Jay 擔任遺產管理人。", ref:"判詞第 67、72 段"},
- {who:"法官", img:"c_judge", judge:1, text:"三方訟費以{{indemnity}}由遺產支付：申請人係適當一方，佢嘅申請必要而且合理。不過 2017 年 1 月押後聆訊嗰次嘅訟費，要申請人自己負擔，因為對方當時合理地要求做鑑證報告。", ref:"判詞第 69–72 段"},
+ {who:"法官", img:"c_judge", judge:1, ruling:{en:"{{satisfied}} the unsent text message is a {{document}} that embodies the deceased's testamentary intentions, that he had {{capacity}}, and that he intended it to operate as his will.", zh:"本庭信納：該條未發出嘅短訊係一份表達死者遺囑意願嘅文件；死者有立遺囑能力；而且佢有意令佢成為自己嘅遺囑。"}, ref:"判詞第 41、47、57、67 段"},
+ {who:"法官", img:"c_judge", judge:1, ruling:{en:"{{pursuant|Pursuant to}} section 18 of the {{succession}}, the requirements for {{execution|execution}} are {{dispensed}}, and the text message is admitted to {{probate|probate}} as the will of the deceased.", zh:"根據《繼承法》第 18 條，豁免簽立要求，該短訊作為死者嘅遺囑獲得認證。"}, ref:"判詞第 72 段，命令第 1–3 項"},
+ {who:"法官", img:"c_judge", judge:1, ruling:{en:"The {{costs}} of all parties are to be paid out of the estate on an {{indemnity|indemnity basis}}, save that the applicant is to bear her own costs of the adjourned hearing.", zh:"各方訟費以彌償基準由遺產支付；不過押後聆訊嗰次，申請人須自行負擔訟費。"}, ref:"判詞第 69–72 段"},
  {who:"May 姐", img:"c_mentor", text:"對 Jo 嚟講好難受。但呢單案之後，全澳洲嘅律師都講同一句：**快啲立一份正式遺囑。**"},
  {who:"May 姐", img:"c_mentor", text:"仲有一點：Jo 係配偶，理論上仍然可以考慮提出{{fpa}}。判詞冇講佢之後有冇咁做，不過時限一樣係 9 個月。"},
  {end:1}
