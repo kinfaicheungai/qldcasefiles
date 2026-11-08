@@ -18,13 +18,13 @@ self.addEventListener("install", e => {
 self.addEventListener("activate", e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== VERSION).map(k => caches.delete(k)))).then(() => self.clients.claim()));
 });
+/* Network first (so updates show as soon as you're online), cache as offline fallback. */
 self.addEventListener("fetch", e => {
   if (e.request.method !== "GET") return;
   e.respondWith(
-    caches.match(e.request).then(hit => hit || fetch(e.request).then(res => {
-      const copy = res.clone();
-      if (res.ok || res.type === "opaque") caches.open(VERSION).then(c => c.put(e.request, copy));
+    fetch(e.request, {cache: "no-cache"}).then(res => {
+      if (res.ok || res.type === "opaque") { const copy = res.clone(); caches.open(VERSION).then(c => c.put(e.request, copy)); }
       return res;
-    }).catch(() => hit))
+    }).catch(() => caches.match(e.request, {ignoreSearch: true}))
   );
 });
