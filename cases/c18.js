@@ -11,7 +11,6 @@ const T = {
   casual:{en:"regular and systematic casual",zh:"定期而有系統的臨時工",d:"臨時工如果工作定期而有系統，並合理預期會繼續，服務期都可以計入最低受僱期。"},
   minperiod:{en:"minimum employment period",zh:"最低受僱期",d:"申請不公平解僱前要做滿嘅時間：一般僱主 6 個月，小型企業 12 個月。"},
   reinstatement:{en:"reinstatement",zh:"復職",d:"不公平解僱嘅首選補救，但好多情況唔適合。"},
-  compensation:{en:"compensation",zh:"賠償",d:"代替復職嘅金錢補救，有上限，並會按員工行為等因素扣減。"},
   mitigate:{en:"mitigation of loss",zh:"減輕損失",d:"被解僱後要合理地搵工。冇咁做，賠償會被扣減。"},
   misconduct:{en:"misconduct",zh:"不當行為",d:"員工違反工作上應有嘅行為標準。"},
   award:{en:"modern award",zh:"現代行業裁決",d:"規定某行業最低工資同條件嘅文件，例如酒店業 Hospitality Award。"}

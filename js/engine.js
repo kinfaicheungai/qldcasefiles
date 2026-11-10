@@ -5,7 +5,7 @@
 const QCF = window.QCF = {cases:[], register(c){this.cases.push(c)}};
 const $ = s => document.querySelector(s);
 const KEY = "qcf2";
-const CAT = {classic:"經典", estate:"遺產", dv:"家暴", debt:"錢債", biz:"生意", family:"家事", visa:"簽證", crim:"刑事", neighbour:"鄰舍", work:"僱傭"};
+const CAT = {classic:"經典", estate:"遺產", dv:"家暴", debt:"錢債", biz:"生意", family:"家事", visa:"簽證", crim:"刑事", neighbour:"鄰舍", work:"僱傭", injury:"傷亡索償", scam:"詐騙"};
 
 /* ---------- persistent store ---------- */
 let store = {dict:[], best:{}, prog:{}};

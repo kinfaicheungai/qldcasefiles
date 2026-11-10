@@ -1,5 +1,7 @@
 /* Shared bilingual legal glossary: key -> {en, zh, d} */
 window.QCF_GLOSSARY = {
+  interpreter:{en:"court interpreter",zh:"法庭傳譯員",d:"幫唔識英文或英文有限嘅證人作供。證人經傳譯作供，唔會因此被視為較唔可信。"},
+  compensation:{en:"compensation",zh:"賠償",d:"代替復職嘅金錢補救，有上限，並會按員工行為等因素扣減。"},
   remit:{en:"remit / remitted",zh:"發還重審",d:"上訴法院撤銷原判，將案件送返下級法院重新處理。"},
   indemnity:{en:"indemnity costs",zh:"彌償基準訟費",d:"較高標準嘅訟費，基本上覆蓋實際合理開支。"},
   specialleave:{en:"special leave to appeal",zh:"特別上訴許可",d:"上訴到高等法院之前要先獲批嘅許可，只有重要嘅案件先會批。"},

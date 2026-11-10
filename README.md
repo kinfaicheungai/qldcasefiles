@@ -23,6 +23,12 @@
 | 16 | 遺產 | 媽媽的老屋 | Moylan v Rickard [2010] QSC 327 |
 | 17 | 刑事 | 借住一星期 | KFL v Commissioner of Police [2023] QDC 20 |
 | 18 | 僱傭 | 酒舖經理 | Maltby v Kingston Family Trust [2024] FWC 2987 |
+| 19 | 傷亡索償 | 倒車 | Cho v Hui [2023] QDC 155 |
+| 20 | 僱傭（工傷） | 一年級 | Stable v Workers' Compensation Regulator [2024] QIRC 274 |
+| 21 | 詐騙 | 假銀行短訊 | AFCA (Mr T v HSBC) 2024; ASIC v HSBC [2026] FCA 847 |
+| 22 | 僱傭 | 全英文的會議 | Baharom v Master Butchers Co-operative [2024] FWC 2706 |
+| 23 | 經典 | 廚房裏的簽名 | Commercial Bank of Australia v Amadio (1983) 151 CLR 447 |
+| 24 | 簽證（傳譯） | 失真的聲音 | Perera v Minister for Immigration [1999] FCA 507 |
 
 人名已更改；每道題目附判詞段落出處。遊戲用作學習，唔係法律意見。
 
