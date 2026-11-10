@@ -176,3 +176,4 @@ body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--f-body)
 
 .backstep{position:absolute;z-index:4;left:max(10px,env(safe-area-inset-left,0px));top:10px;font:inherit;font-size:13px;color:var(--paper);background:#141a2ecc;border:1px solid #3a4673;border-radius:999px;padding:3px 12px;cursor:pointer;backdrop-filter:blur(4px)}
 .chip.classic{background:#e8d9a8}.chip.visa{background:#8fd3d1}
+.chip.neighbour{background:#b7e07a}.chip.work{background:#f5a97f}

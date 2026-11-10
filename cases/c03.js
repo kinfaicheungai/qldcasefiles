@@ -13,7 +13,6 @@ const T = {
   principles:{en:"principles (s 4)",zh:"指導原則（第 4 條）",d:"其中最重要嘅一條：受家暴影響者嘅安全、保障同福祉係首要考慮。"},
   rehearing:{en:"appeal by way of rehearing",zh:"按原審記錄重新聆訊",d:"上訴法院主要根據原審記錄重新考慮，通常唔會再聽一次證人。"},
   pf:{en:"procedural fairness",zh:"程序公平",d:"雙方都要有合理機會陳述同回應。冇律師嘅人，法院要特別留意。"},
-  remit:{en:"remit",zh:"發還重審",d:"上訴法院撤銷原判，將案件送返下級法院重新處理。"},
   srl:{en:"self-represented litigant",zh:"無律師代表的當事人",d:"自己出庭、冇律師代表嘅人。"}
 };
 const E = {

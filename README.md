@@ -17,6 +17,12 @@
 | 10 | 簽證 | 十年夫妻 | Imseeh (Migration) [2022] AATA 2245 |
 | 11 | 錢債 | 沒有入住報告 | Wysocki v Etri [2024] QCATA 104 |
 | 12 | 錢債 | 二手車的期望 | Beynon v Fair Deal Car Sales [2024] QCAT 102 |
+| 13 | 經典 | 一條薯條 | Strong v Woolworths (2012) 246 CLR 182 |
+| 14 | 家事 | 紅土小鎮 | MRR v GR (2010) 240 CLR 461 |
+| 15 | 鄰舍 | 被擋住的景觀 | Collyer v Daniells [2024] QCAT 229 |
+| 16 | 遺產 | 媽媽的老屋 | Moylan v Rickard [2010] QSC 327 |
+| 17 | 刑事 | 借住一星期 | KFL v Commissioner of Police [2023] QDC 20 |
+| 18 | 僱傭 | 酒舖經理 | Maltby v Kingston Family Trust [2024] FWC 2987 |
 
 人名已更改；每道題目附判詞段落出處。遊戲用作學習，唔係法律意見。
 

@@ -1,5 +1,8 @@
 /* Shared bilingual legal glossary: key -> {en, zh, d} */
 window.QCF_GLOSSARY = {
+  remit:{en:"remit / remitted",zh:"發還重審",d:"上訴法院撤銷原判，將案件送返下級法院重新處理。"},
+  indemnity:{en:"indemnity costs",zh:"彌償基準訟費",d:"較高標準嘅訟費，基本上覆蓋實際合理開支。"},
+  specialleave:{en:"special leave to appeal",zh:"特別上訴許可",d:"上訴到高等法院之前要先獲批嘅許可，只有重要嘅案件先會批。"},
   unconscionable:{en:"unconscionable",zh:"不合良心",d:"法律上嘅「唔公道」：明知對方處於弱勢或者靠你嘅表現去做嘢，仲加以利用。"},
   undueinf:{en:"undue influence",zh:"不當影響",d:"一方被另一方影響到冇自由意志作決定。"},
   independent:{en:"independent legal advice",zh:"獨立法律意見",d:"由同交易冇利益關係嘅律師提供嘅意見。"},

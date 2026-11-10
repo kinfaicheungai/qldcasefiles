@@ -9,7 +9,6 @@ const T = {
   capacity:{en:"testamentary capacity",zh:"立遺囑能力",d:"立遺囑時心智上明白自己做緊咩、財產有咩、邊個有申索。"},
   banks:{en:"Banks v Goodfellow test",zh:"Banks v Goodfellow 能力測試",d:"1870 年英國案例定下嘅四項：明白立遺囑嘅性質、知道財產範圍、知道可能有申索嘅人、能夠衡量佢哋。"},
   supreme:{en:"Supreme Court of Queensland",zh:"昆士蘭最高法院",d:"昆州最高層嘅審訊法院，處理遺囑認證同重大民事案件。"},
-  indemnity:{en:"indemnity costs",zh:"彌償基準訟費",d:"較高標準嘅訟費，基本上覆蓋實際合理開支。"},
   beneficiary:{en:"beneficiary",zh:"受益人",d:"根據遺囑或法例會分到遺產嘅人。佢哋嘅證供法院會特別小心。"}
 };
 const E = {
