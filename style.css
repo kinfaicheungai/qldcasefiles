@@ -173,3 +173,6 @@ body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--f-body)
 .say.mini{font-size:12px;padding:1px 10px;margin-left:8px;vertical-align:middle;color:#d7cbff;border-color:#a58bf0}
 
 .ver{display:inline-block;justify-self:start;margin-top:4px;font-family:var(--f-law);font-size:12px;color:var(--ink);background:var(--wattle);border-radius:4px;padding:0 8px;font-variant-numeric:tabular-nums}
+
+.backstep{position:absolute;z-index:4;left:max(10px,env(safe-area-inset-left,0px));top:10px;font:inherit;font-size:13px;color:var(--paper);background:#141a2ecc;border:1px solid #3a4673;border-radius:999px;padding:3px 12px;cursor:pointer;backdrop-filter:blur(4px)}
+.chip.classic{background:#e8d9a8}.chip.visa{background:#8fd3d1}

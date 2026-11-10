@@ -1,5 +1,9 @@
 /* Shared bilingual legal glossary: key -> {en, zh, d} */
 window.QCF_GLOSSARY = {
+  unconscionable:{en:"unconscionable",zh:"不合良心",d:"法律上嘅「唔公道」：明知對方處於弱勢或者靠你嘅表現去做嘢，仲加以利用。"},
+  undueinf:{en:"undue influence",zh:"不當影響",d:"一方被另一方影響到冇自由意志作決定。"},
+  independent:{en:"independent legal advice",zh:"獨立法律意見",d:"由同交易冇利益關係嘅律師提供嘅意見。"},
+  leave:{en:"leave to appeal",zh:"上訴許可",d:"某啲案件要先得到許可先可以上訴，例如 QCAT 小額民事案。"},
   contingencies:{en:"contingencies of life",zh:"人生中的意外變故",d:"例如患病、失業、意外。家庭供養案常問申請人有冇足夠緩衝應付。"},
   foreseeable:{en:"reasonably foreseeable",zh:"可合理預見",d:"一個合理嘅人當時可以預計到會發生。"},
   allowed:{en:"the appeal is allowed",zh:"上訴得直",d:"上訴人勝訴，上訴法院會改變原審結果。相反係 dismissed（駁回）。"},

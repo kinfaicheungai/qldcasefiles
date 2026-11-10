@@ -5,7 +5,7 @@
 const QCF = window.QCF = {cases:[], register(c){this.cases.push(c)}};
 const $ = s => document.querySelector(s);
 const KEY = "qcf2";
-const CAT = {estate:"遺產", dv:"家暴", debt:"錢債", biz:"生意", crim:"刑事", family:"家事"};
+const CAT = {classic:"經典", estate:"遺產", dv:"家暴", debt:"錢債", biz:"生意", family:"家事", visa:"簽證", crim:"刑事"};
 
 /* ---------- persistent store ---------- */
 let store = {dict:[], best:{}, prog:{}};
@@ -61,7 +61,7 @@ function rankOf(p){ return p>=.85?"資深大律師 Senior Counsel":p>=.65?"執�
 /* ---------- Hub ---------- */
 let filter = "all";
 function showHub(){
-  C=null; st=null;
+  C=null; st=null; const bb=$("#backBtn"); if(bb) bb.hidden=true;
   document.querySelectorAll(".end,.cover,.sheet").forEach(x=>x.remove());
   const old=$("#hub"); if(old) old.remove();
   const total = QCF.cases.reduce((a,c)=>a+maxScore(c),0);
@@ -131,6 +131,7 @@ function chapterOf(i){ for(let j=i;j>=0;j--) if(S[j].ch) return S[j]; return nul
 
 function render(){
   if(window.speechSynthesis) speechSynthesis.cancel();
+  const bb=$("#backBtn"); if(bb) bb.hidden = !(st && st.i>0 && !S[st.i].end);
   const n=S[st.i]; const panel=$("#panel"); panel.innerHTML="";
   const c=chapterOf(st.i); if(c){ $("#chap").textContent=`${c.ch}・${c.title}`; setBg(c.bg); }
   if(n.bg) setBg(n.bg);
@@ -289,6 +290,7 @@ document.addEventListener("click",e=>{ const t=e.target.closest(".term"); if(t){
 window.addEventListener("DOMContentLoaded",()=>{
   $("#dictBtn").onclick=openDict; $("#evBtn").onclick=openEv;
   $("#homeBtn").onclick=()=>{ if(st) save(); showHub(); };
+  $("#backBtn").onclick=()=>{ if(!st||st.i<=0) return; document.querySelectorAll(".sheet").forEach(x=>x.remove()); st.i--; render(); };
   $("#scoreBtn").onclick=()=>{ if(!C) return; sheet("分數",`<div class="d" style="color:var(--muted)">選擇題每題 +10，證據題每張 +10，預測判決另計。呢單案滿分 ${maxScore(C)}。</div><div class="rank"><div class="n">${st.score}<small> / ${maxScore(C)}</small></div></div>`); };
   showHub();
 });

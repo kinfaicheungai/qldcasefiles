@@ -7,7 +7,6 @@ const T = {
   advancement:{en:"presumption of advancement",zh:"贈與推定",d:"某啲關係（例如父母俾錢子女）之下，法律可能推定筆錢係送，唔係借。俾錢嘅一方要有證據推翻。"},
   legalrel:{en:"intention to create legal relations",zh:"建立法律關係的意圖",d:"雙方係咪有意令協議有法律約束力。家人之間嘅安排要有證據顯示呢個意圖。"},
   credit:{en:"credit / credibility",zh:"可信度",d:"證人講嘅嘢有幾可信。由聽證嘅審裁員判斷，上訴好少推翻。"},
-  leave:{en:"leave to appeal",zh:"上訴許可",d:"某啲案件要先得到許可先可以上訴。QCAT 小額民事案件就係咁。"},
   glaring:{en:"glaringly improbable",zh:"明顯不可能",d:"上訴推翻事實裁斷嘅高門檻：原審結論要明顯唔合理先會干預。"},
   adjudicator:{en:"adjudicator / member",zh:"審裁員",d:"QCAT 嘅決策者。小額案由 adjudicator 處理，上訴由 member 處理。"}
 };
