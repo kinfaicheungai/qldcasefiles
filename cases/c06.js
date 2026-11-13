@@ -48,7 +48,7 @@ const S = [
  {multi:3, q:"揀 3 張證據，最能顯示 Waltons 嘅做法「不合良心」。", img:"w_exec", pool:["W1","W2","W3","W4","W5","W6"], right:["W1","W3","W4"], half:["W2","W6"],
    fb:"Mason CJ 同 Wilson J 指出：Waltons 嘅律師講過有異議會通知（W1）；佢知道工程已經開始、時間好趕（W3）；但係選擇「慢慢嚟」，唔話俾 Maher 知（W4）。W2 同 W6 證明 Maher 確實相信同承受損害，亦都重要。", ref:"Mason CJ & Wilson J"},
 
- {ch:"第三幕", title:"高等法院", sub:"High Court of Australia・1988", bg:"bg_court"},
+ {court:"hca:final", ch:"第三幕", title:"高等法院", sub:"High Court of Australia・1988", bg:"bg_court"},
  {who:"旁白", text:"新州最高法院判 Maher 勝訴，上訴庭維持。Waltons 再上訴到{{hca}}。"},
  {who:"法官", img:"c_judge", judge:1, text:"單係唔交換合約，本身唔係不合良心。但如果一方鼓勵另一方相信合約一定會完成，又眼睜睜睇住對方因此蒙受損害，情況就唔同。", ref:"Mason CJ & Wilson J"},
  {q:"今單案確立咗乜嘢重要原則？", img:"c_judge", opts:[

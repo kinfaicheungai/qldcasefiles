@@ -27,7 +27,7 @@ const S = [
  {ch:"第一幕", title:"失真的聲音", sub:"1996 年・墨爾本", bg:"bg_rrt"},
  {who:"May 姐", img:"c_mentor", text:"今日呢單，同你嘅工作關係最直接：傳譯質素差到一個地步，法院話成個聆訊唔公平。"},
  {who:"旁白", text:"Mr P 係斯里蘭卡人，自稱人權律師，支持一個反對派政黨，擔心返國會被殺。1996 年 9 月，佢持商務簽證到澳洲，之後申請{{protectionvisa}}。", ref:"判詞第 1–3 段"},
- {who:"旁白", text:"申請被拒。1997 年 10 月，佢喺{{rrt}}聆訊，用僧伽羅語作供，有傳譯員同移民代理在場。", ref:"判詞第 8 段"},
+ {court:"rrt:review", who:"旁白", text:"申請被拒。1997 年 10 月，佢喺{{rrt}}聆訊，用僧伽羅語作供，有傳譯員同移民代理在場。", ref:"判詞第 8 段"},
  {who:"Mr P", img:"rr_applicant", text:"我講嘅嘢，好似去到審裁員度就變咗樣。"},
  {who:"旁白", text:"1997 年 11 月，審裁處維持拒簽。理由主要係：唔相信佢嘅講法，覺得佢誇大。", ref:"判詞第 8–11 段", terms:["credibilityfind"]},
 
@@ -44,7 +44,7 @@ const S = [
    {t:"傳譯員可以直接簡化問題", fb:"簡化就會失真。"}
  ]},
 
- {ch:"第三幕", title:"聯邦法院", sub:"Federal Court・Kenny J", bg:"bg_court"},
+ {court:"fca:review", ch:"第三幕", title:"聯邦法院", sub:"Federal Court・Kenny J", bg:"bg_court"},
  {who:"法官", img:"c_judge", judge:1, text:"申請人唔識英文，審裁處就必須提供傳譯。傳譯唔係機械式工作，亦好少可以完美。", ref:"判詞第 20–21、25–26 段"},
  {who:"法官", img:"c_judge", judge:1, text:"本庭參考加拿大最高法院 R v Tran 嘅標準：連續性、精確、中立、稱職。當中{{accuracy}}最核心。", ref:"判詞第 28–29 段", terms:["competent"]},
  {who:"審裁處一方", text:"審裁員已經喺決定入面話，唔接納傳譯有問題。而且冇專家指出邊一句具體譯錯。", gain:"P6"},

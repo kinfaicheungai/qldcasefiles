@@ -36,7 +36,7 @@ const S = [
  ]},
  {who:"旁白", text:"因為 Kyle 五年內曾經因違反家暴令被判刑，今次係{{aggravated}}。", gain:"K4", terms:["antecedents"]},
 
- {ch:"第二幕", title:"裁判法院", sub:"Southport・2022 年 4 月", bg:"bg_magistrates"},
+ {court:"mag:trial", ch:"第二幕", title:"裁判法院", sub:"Southport・2022 年 4 月", bg:"bg_magistrates"},
  {who:"旁白", text:"2022 年 4 月 8 日，Kyle 喺 Southport 裁判法院{{plea}}。", gain:"K5"},
  {who:"檢控官", text:"控方要求記錄定罪。", ref:"判詞第 19 段", terms:["prosecution"]},
  {who:"旁白", text:"辯方冇就呢點爭辯。裁判官判{{fine}} $800，並且記錄定罪。判刑理由冇提到認罪，亦冇解釋點解記錄定罪。", ref:"判詞第 1、13、19 段"},
@@ -47,7 +47,7 @@ const S = [
  ]},
  {who:"Kyle", img:"k_driver", text:"我係送貨司機。有刑事紀錄，我可能會冇咗份工。", gain:"K6"},
 
- {ch:"第三幕", title:"上訴", sub:"District Court・Southport", bg:"bg_court"},
+ {court:"dc:appeal", ch:"第三幕", title:"上訴", sub:"District Court・Southport", bg:"bg_court"},
  {who:"旁白", text:"Kyle 根據{{s222}}上訴。法院批准佢修改上訴理由，並提交{{freshev2}}：一份關於工作影響嘅宣誓書。", ref:"判詞第 2–3、8–11 段"},
  {who:"法官", img:"c_judge", judge:1, text:"上訴法院審查判刑，要搵到{{housevking}}先會干預。", ref:"判詞第 7 段"},
  {multi:2, q:"揀 2 個裁判官嘅程序錯誤，最能支持上訴。", img:"c_judge", pool:["K1","K2","K3","K4","K5","K6","K7"], right:["K5","K6"],

@@ -45,7 +45,7 @@ const S = [
  {who:"樹藝師", img:"n_arborist", text:"啲樹好健康。佢哋的確遮住咗由二樓露台向南嘅景觀。不過，申請人自己啲樹都部分遮擋緊同一個景觀。", gain:"P5", ref:"判詞第 16 段"},
  {who:"樹藝師", img:"n_arborist", text:"啲樹提供私隱。可以疏剪降低高度，唔需要專業樹藝師處理，最終高度要量好視線先定。", gain:"P7", ref:"判詞第 16、57 段"},
 
- {ch:"第三幕", title:"三步測試", sub:"QCAT・書面審理", bg:"bg_qcat"},
+ {court:"qcat:tribunal", ch:"第三幕", title:"三步測試", sub:"QCAT・書面審理", bg:"bg_qcat"},
  {who:"旁白", text:"案件以{{onpapers2}}處理。審裁員用三步：一、買樓時景觀係點；二、樹係咪「嚴重」阻擋；三、平衡雙方利益。", ref:"判詞第 17、28–31 段"},
  {who:"審裁員", img:"l_member", judge:1, text:"國會辯論時形容「嚴重」嘅門檻：", quote:{en:"“the view must be nearly blocked out”", zh:"「景觀必須幾乎被完全遮擋」", src:"引於判詞第 47 段"}},
  {multi:3, q:"揀 3 張證據，最能削弱 Peter 嘅申請。", img:"l_member", pool:["P1","P2","P3","P4","P5","P6","P7"], right:["P3","P4","P5"], half:["P6","P7"],

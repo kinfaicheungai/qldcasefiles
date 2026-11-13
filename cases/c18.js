@@ -45,7 +45,7 @@ const S = [
  {who:"旁白", text:"不過全部都係口頭講，冇書面紀錄。酒店有 32 個員工，經理冇人事專業知識。", gain:"W7"},
  {who:"旁白", text:"Maya 喺限期內向公平工作委員會申請{{unfair}}。", ref:"判詞第 11 段"},
 
- {ch:"第三幕", title:"聆訊", sub:"Fair Work Commission", bg:"bg_qcat"},
+ {court:"fwc:tribunal", ch:"第三幕", title:"聆訊", sub:"Fair Work Commission", bg:"bg_qcat"},
  {q:"委員會第一個問題：解僱有冇{{validreason}}？", img:"l_member", opts:[
    {t:"有，對同事嘅不當行為同禮券都構成合理理由", ok:1, fb:"啱！委員會接納兩位同事嘅講法，亦認為收禮券係合理理由。", ref:"判詞第 23、25 段", terms:["misconduct"]},
    {t:"冇，同事投訴唔算", fb:"委員會接納咗投訴內容。"},

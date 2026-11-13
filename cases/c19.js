@@ -38,7 +38,7 @@ const S = [
  {who:"旁白", text:"被告一方{{liabilityadm}}。成單案只爭一件事：{{quantum}}。", gain:"H1"},
  {who:"旁白", text:"Park 先生追討 $263,359。保險公司話只值 $5,274.89。", ref:"判詞第 4 段"},
 
- {ch:"第二幕", title:"保險公司的攻勢", sub:"District Court・布里斯本", bg:"bg_court"},
+ {court:"dc:trial", ch:"第二幕", title:"保險公司的攻勢", sub:"District Court・布里斯本", bg:"bg_court"},
  {who:"保險公司大律師", img:"p_barrister", text:"當時架車只係行緊時速五至十公里，咁嘅碰撞唔會令人受傷。", ref:"判詞第 17 段"},
  {who:"保險公司大律師", img:"p_barrister", text:"原告對意外經過同之後嘅記憶前後唔一致。佢講自己嘅康樂活動，同醫療紀錄都唔夾。", gain:"H5"},
  {who:"旁白", text:"Park 先生嘅母語係韓文，全程透過{{interpreter}}作供。", gain:"H6"},

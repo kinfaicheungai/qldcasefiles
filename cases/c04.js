@@ -32,7 +32,7 @@ const S = [
  {who:"May 姐", img:"c_mentor", text:"第一步，我哋幫 Colin 寄{{lod}}，俾 Dean 一個限期。"},
  {who:"旁白", text:"2017 年 9 月 19 日，法律中心寄出追款信。10 月 23 日，Dean 轉咗 **$50** 俾 Colin。之後就冇然後。", gain:"L4", ref:"判詞第 1 段及註 12"},
 
- {ch:"第二幕", title:"審裁處", sub:"QCAT・Southport", bg:"bg_qcat"},
+ {court:"qcat:tribunal", ch:"第二幕", title:"審裁處", sub:"QCAT・Southport", bg:"bg_qcat"},
  {who:"旁白", text:"2018 年 2 月，Colin 入紙 QCAT，追討本金 $14,950 加利息 $748，共 $15,698。", ref:"判詞第 2 段"},
  {who:"旁白", text:"2018 年 5 月 9 日，Southport 聆訊。兩父子都冇律師。", ref:"判詞第 3 段", terms:["adjudicator"]},
  {who:"Dean", img:"l_son", text:"嗰 $10,000 係阿爸送俾我嘅。第二筆 $5,000？我根本冇收過。"},
@@ -56,7 +56,7 @@ const S = [
  {who:"審裁員", img:"l_member", judge:1, ruling:{en:"I find that both sums were loans, not gifts. There was an {{legalrel}}, and the evidence is sufficient to {{rebut}} any {{advancement}}. The respondent is to pay the applicant $15,000 within 14 days.", zh:"本席裁定兩筆款項都係借款，唔係贈與。雙方有建立法律關係嘅意圖，證據亦足以推翻任何贈與推定。答辯人須於 14 日內向申請人支付 $15,000。"}, ref:"判詞第 3、8–9、12–13 段"},
  {who:"May 姐", img:"c_mentor", text:"細心啲睇：Colin 追 $15,698，判 $15,000。判決冇解釋點解，上訴時亦冇人追究，因為係 Dean 上訴。", ref:"判詞第 4 段"},
 
- {ch:"第三幕", title:"上訴", sub:"QCAT 上訴審裁處", bg:"bg_qcat"},
+ {court:"qcata:appeal", ch:"第三幕", title:"上訴", sub:"QCAT 上訴審裁處", bg:"bg_qcat"},
  {who:"旁白", text:"Dean 唔服，想上訴。"},
  {q:"QCAT 小額民事案要上訴，第一步係？", img:"l_son", opts:[
    {t:"直接上訴，自動重新審過", fb:"小額民事案冇自動上訴權。"},

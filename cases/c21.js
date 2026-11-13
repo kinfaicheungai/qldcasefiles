@@ -50,7 +50,7 @@ const S = [
  ]},
  {who:"May 姐", img:"c_mentor", text:"關鍵在一個字：「自願」。守則冇定義乜嘢叫自願。"},
 
- {ch:"第三幕", title:"自願？", sub:"AFCA", bg:"bg_qcat"},
+ {court:"afca:tribunal", ch:"第三幕", title:"自願？", sub:"AFCA", bg:"bg_qcat"},
  {multi:3, q:"揀 3 張證據，最能支持「Mr T 唔係自願透露驗證碼」。", img:"l_member", pool:["Z1","Z2","Z3","Z4","Z5","Z6","Z7"], right:["Z1","Z2","Z5"], half:["Z7"],
    fb:"AFCA 認為：假短訊插入咗真銀行嘅對話（Z1），電話語音同真銀行一樣（Z2），騙徒知道佢個名、製造緊急感（Z5）。呢啲手段構成一定程度嘅脅迫，影響咗佢嘅自由意志。Z7 則係另外判非財務損失賠償嘅原因。", ref:"Bright Law 及 Information Age 報道"},
  {q:"銀行話「個號碼唔係我哋嘅」，AFCA 點睇？", img:"l_member", opts:[
@@ -64,7 +64,7 @@ const S = [
  {who:"AFCA", img:"l_member", judge:1, ruling:{en:"The complainant did not {{voluntarily}} his passcodes. The scammer's tactics created a degree of coercion that overrode his free will. The transaction was an {{unauthorised}}.", zh:"投訴人並非自願透露密碼。騙徒嘅手段構成一定程度嘅脅迫，凌駕咗佢嘅自由意志。該交易屬未經授權交易。"}, ref:"Bright Law 及 Information Age 報道"},
  {who:"AFCA", img:"l_member", judge:1, ruling:{en:"The bank must refund $47,028.45, being the disputed transaction less the $150 limited customer liability, plus interest, $1,000 for {{nonfinancial}} and $5,000 towards legal costs.", zh:"銀行須退還 $47,028.45（即爭議交易金額減去客戶有限責任 $150），另加利息、$1,000 非財務損失補償，以及 $5,000 律師費。"}, ref:"Bright Law 報道 AFCA 決定"},
 
- {ch:"第四幕", title:"後續", sub:"Federal Court・2026 年", bg:"bg_court"},
+ {court:"fca:trial", ch:"第四幕", title:"後續", sub:"Federal Court・2026 年", bg:"bg_court"},
  {who:"旁白", text:"Mr T 唔係唯一一個。{{asic}}之後入稟聯邦法院，指 HSBC 冇{{efh}}提供服務。", ref:"[2026] FCA 847 第 1、56 段"},
  {who:"旁白", text:"HSBC 承認：2020 至 2024 年收到 1,022 宗未經授權交易報告，97% 至少有一項唔符合《電子支付守則》；73% 調查超過 21 日。", ref:"[2026] FCA 847 第 35、47–50 段"},
  {who:"法官", img:"c_judge", judge:1, ruling:{en:"HSBC is ordered to pay a total {{civilpenalty}} of $35 million. The penalty is somewhat on the lower side of what is acceptable, but well within the range of appropriate penalties.", zh:"HSBC 須支付總額 3,500 萬元民事罰款。呢個罰款屬可接受範圍嘅較低一端，但仍然完全喺適當範圍之內。"}, ref:"[2026] FCA 847 第 108、114 段"},

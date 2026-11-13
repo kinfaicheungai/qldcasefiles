@@ -34,7 +34,7 @@ const S = [
  ]},
  {who:"旁白", text:"工傷賠償被拒。覆核後，{{regulator}}維持拒絕。Lara 上訴到{{qirc}}。", ref:"判詞第 1 段"},
 
- {ch:"第二幕", title:"壓力從哪裏來", sub:"QIRC・2022 年 10 月聆訊", bg:"bg_qcat"},
+ {court:"qirc:appeal", ch:"第二幕", title:"壓力從哪裏來", sub:"QIRC・2022 年 10 月聆訊", bg:"bg_qcat"},
  {who:"精神科醫生", text:"佢嘅傷害同學生行為、同佢覺得學校冇支援佢有關。", gain:"X2"},
  {who:"監管機構律師", text:"佢 2014 年已經有精神病史。", gain:"X3"},
  {who:"旁白", text:"委員接納：佢 2020 年尾狀況穩定；佢有心理傷害，而傷害係因工作而起。", ref:"判詞第 6、81–82 段"},

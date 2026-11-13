@@ -63,7 +63,7 @@ const S = [
    {t:"法院自動假設有，唔使任何人證明", fb:"只有正式簽妥嘅遺囑先有呢個推定。"}
  ]},
 
- {ch:"第三幕", title:"開庭", sub:"Supreme Court of Queensland", bg:"bg_court"},
+ {court:"sc:trial", ch:"第三幕", title:"開庭", sub:"Supreme Court of Queensland", bg:"bg_court"},
  {who:"旁白", text:"2017 年 6 月，{{supreme}}。Jo 申請按無遺囑分配；Dave 同 Jay 申請宣佈短訊係遺囑。Matt 嘅兒子支持 Jo；Matt 嘅媽媽同另一個細佬支持 Dave。", ref:"判詞第 2–4 段"},
  {who:"法官", img:"c_judge", judge:1, text:"能力測試源自{{banks}}：明白自己做緊咩、知道財產大概有咩、知道邊啲人可能有申索，同埋識得衡量佢哋。呢個係程度問題。", ref:"判詞第 11 段"},
  {who:"法官", img:"c_judge", judge:1, text:"申請人提到死者嘅抑鬱同自殺。本庭要指出：自殺本身唔會令法院推定死者冇能力。", ref:"判詞第 51 段"},

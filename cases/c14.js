@@ -42,11 +42,11 @@ const S = [
    {t:"唔係，責任係講重大決定，時間係講孩子同邊個住幾耐", ok:1, fb:"啱！共同責任係一齊決定教育、醫療等重大事項；同住時間要另外考慮。", ref:"s 61DA、s 65DAA（當時版本）"},
    {t:"冇分別，法院點叫都得", fb:"分別好大。"}
  ]},
- {who:"旁白", text:"2008 年 4 月 1 日，{{fedmag}}作出最終命令：父母有平等共同責任，女兒同父母各住一半時間。前提係兩個人都住喺 Mount Isa。", ref:"判決摘要"},
+ {court:"fmc:trial", who:"旁白", text:"2008 年 4 月 1 日，{{fedmag}}作出最終命令：父母有平等共同責任，女兒同父母各住一半時間。前提係兩個人都住喺 Mount Isa。", ref:"判決摘要"},
  {who:"Mel", img:"mr_mother", text:"即係我要繼續留喺呢度，住露營車公園，冇工開、冇家人。"},
- {who:"旁白", text:"Mel 上訴到家事法院合議庭，被駁回。佢再獲批上訴到高等法院。", ref:"判決摘要", terms:["specialleave"]},
+ {court:"famfull:appeal", who:"旁白", text:"Mel 上訴到家事法院合議庭，被駁回。佢再獲批上訴到高等法院。", ref:"判決摘要", terms:["specialleave"]},
 
- {ch:"第三幕", title:"兩條問題", sub:"High Court of Australia", bg:"bg_court"},
+ {court:"hca:final", ch:"第三幕", title:"兩條問題", sub:"High Court of Australia", bg:"bg_court"},
  {who:"法官", img:"c_judge", judge:1, text:"s 65DAA 要求法院喺作出平均時間命令之前，考慮兩條問題：一、平均時間係咪符合子女最佳利益？二、平均時間係咪{{practicable}}？", ref:"判決摘要"},
  {q:"聯邦裁判官錯喺邊？", img:"c_judge", opts:[
    {t:"佢冇考慮女兒最佳利益", fb:"佢有考慮最佳利益。"},

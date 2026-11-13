@@ -40,7 +40,7 @@ const S = [
  ]},
  {who:"旁白", text:"差唔多同一時間，公司請咗一個新嘅工廠工人。", gain:"B3"},
 
- {ch:"第三幕", title:"真正裁員？", sub:"Fair Work Commission", bg:"bg_qcat"},
+ {court:"fwc:tribunal", ch:"第三幕", title:"真正裁員？", sub:"Fair Work Commission", bg:"bg_qcat"},
  {who:"旁白", text:"Bakar 透過傳譯員作供。", ref:"判詞第 8 段", terms:["interpreter"]},
  {multi:2, q:"s 389 第一個條件係「份工唔再需要任何人做」。揀 2 張證據，最能推翻呢點同諮詢責任。", img:"l_member", pool:["B1","B2","B3","B4","B5","B6","B7"], right:["B3","B2"],
    fb:"同一時間請咗新人做工廠工人（B3），即係份工仍然需要人做。會議冇預告、即場終止、冇書面資料（B2），根本係「終止會議，唔係諮詢會議」，冇遵守裁決嘅{{consultation}}。", ref:"判詞第 84–89 段"},

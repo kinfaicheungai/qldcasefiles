@@ -1,3 +1,3 @@
 /* Single source of the app version. Bump on every deploy; the offline cache follows it. */
-self.QCF_VERSION = "1.5";
-self.QCF_BUILD = "2026-11-10";
+self.QCF_VERSION = "1.6";
+self.QCF_BUILD = "2026-11-13";

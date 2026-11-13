@@ -48,7 +48,7 @@ const S = [
    {t:"要睇 Len 有冇住喺嗰度", fb:"唔係關鍵。"}
  ]},
 
- {ch:"第三幕", title:"最高法院", sub:"Supreme Court of Queensland", bg:"bg_court"},
+ {court:"sc:trial", ch:"第三幕", title:"最高法院", sub:"Supreme Court of Queensland", bg:"bg_court"},
  {who:"旁白", text:"Len 入紙最高法院，要求宣佈 15% 仍然有效，並根據{{s106}}追討賠償。", ref:"判詞第 22–31 段"},
  {who:"Rose", img:"m_daughter", text:"我哋係媽媽嘅仔女，佢一定會想俾我哋。我哋一直誠實行事，法院應該根據 s 105 免除責任。", ref:"判詞第 24–31、86–96 段", terms:["s105"]},
  {who:"法官", img:"c_judge", judge:1, text:"首先，賣屋本身唔係違規：冇證據顯示 Sue 會想保留間屋，而佢需要錢支付護理。問題在於賣屋之後啲錢去咗邊。", gain:"A7"},

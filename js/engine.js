@@ -7,6 +7,47 @@ const $ = s => document.querySelector(s);
 const KEY = "qcf2";
 const CAT = {classic:"經典", estate:"遺產", dv:"家暴", debt:"錢債", biz:"生意", family:"家事", visa:"簽證", crim:"刑事", neighbour:"鄰舍", work:"僱傭", injury:"傷亡索償", scam:"詐騙"};
 
+/* ---------- courts: which level of the system each step happens in ---------- */
+const COURTS = {
+  mag:{zh:"裁判法院",en:"Magistrates Court",bench:"一位裁判官",bg:"bg_magistrates"},
+  dc:{zh:"區域法院",en:"District Court of Queensland",bench:"一位法官",bg:"bg_court"},
+  sc:{zh:"最高法院",en:"Supreme Court of Queensland",bench:"一位法官",bg:"bg_court"},
+  qca:{zh:"上訴庭",en:"Queensland Court of Appeal",bench:"三位上訴法官",bg:"bg_appeal"},
+  nswdc:{zh:"新州區域法院",en:"NSW District Court",bench:"一位法官",bg:"bg_court"},
+  nswsc:{zh:"新州最高法院",en:"NSW Supreme Court",bench:"一位法官",bg:"bg_court"},
+  nswca:{zh:"新州上訴庭",en:"NSW Court of Appeal",bench:"三位上訴法官",bg:"bg_appeal"},
+  sasc:{zh:"南澳最高法院",en:"Supreme Court of South Australia",bench:"一位法官",bg:"bg_court"},
+  wamag:{zh:"西澳家事法院（裁判官）",en:"Family Court of WA, Magistrate",bench:"一位裁判官",bg:"bg_magistrates"},
+  wafull:{zh:"西澳家事法院合議庭",en:"Full Court, Family Court of WA",bench:"三位法官",bg:"bg_appeal"},
+  fmc:{zh:"聯邦裁判法院",en:"Federal Magistrates Court",bench:"一位聯邦裁判官",bg:"bg_court"},
+  fcc:{zh:"聯邦巡迴法院",en:"Federal Circuit Court",bench:"一位法官",bg:"bg_court"},
+  famfull:{zh:"家事法院合議庭",en:"Full Court of the Family Court",bench:"三位法官",bg:"bg_appeal"},
+  fca:{zh:"聯邦法院",en:"Federal Court of Australia",bench:"一位法官",bg:"bg_court"},
+  hca:{zh:"澳洲高等法院",en:"High Court of Australia",bench:"五至七位大法官",bg:"bg_hca"},
+  qcat:{zh:"QCAT 審裁處",en:"Qld Civil and Administrative Tribunal",bench:"一位審裁員"},
+  qcata:{zh:"QCAT 上訴審裁處",en:"QCAT Appeal Tribunal",bench:"一位上訴審裁員"},
+  aat:{zh:"行政上訴審裁處",en:"Administrative Appeals Tribunal",bench:"一位審裁員"},
+  rrt:{zh:"難民覆核審裁處",en:"Refugee Review Tribunal",bench:"一位審裁員"},
+  fwc:{zh:"公平工作委員會",en:"Fair Work Commission",bench:"一位委員"},
+  qirc:{zh:"昆州勞資關係委員會",en:"Qld Industrial Relations Commission",bench:"一位委員"},
+  afca:{zh:"澳洲金融投訴局（唔係法院）",en:"Australian Financial Complaints Authority",bench:"一位裁決者"}
+};
+const ROLE = {
+  trial:{zh:"一審",tier:1}, tribunal:{zh:"審裁處",tier:1}, review:{zh:"覆核",tier:2},
+  appeal:{zh:"上訴",tier:2}, final:{zh:"終審",tier:3}
+};
+function courtAt(i){ for(let j=i;j>=0;j--) if(S[j].court) return S[j].court; return null; }
+function courtLabel(code){ if(!code) return null; const [c,r]=code.split(":"); return {c:COURTS[c], r:ROLE[r]||ROLE.trial, role:r}; }
+function showCourt(){
+  const p=$("#courtPlate"); if(!p) return;
+  const code=courtAt(st.i); const L=courtLabel(code);
+  if(!L||!L.c){ p.hidden=true; return null; }
+  const dots=[1,2,3].map(t=>`<i class="${t<=L.r.tier?"on":""}"></i>`).join("");
+  p.className="courtplate tier"+L.r.tier+(L.role==="tribunal"||L.role==="review"?" trib":"");
+  p.innerHTML=`<span class="cp-role">${L.r.zh}</span><span class="cp-name"><b>${L.c.zh}</b><small>${L.c.en}</small></span><span class="cp-ladder" aria-label="法院層級 ${L.r.tier} / 3">${dots}</span>`;
+  p.hidden=false; return L;
+}
+
 /* ---------- persistent store ---------- */
 let store = {dict:[], best:{}, prog:{}};
 try{ const d = JSON.parse(localStorage.getItem(KEY)||"null"); if(d) store = Object.assign(store,d); }catch(e){}
@@ -56,12 +97,13 @@ function maxScore(c){
   });
   return m;
 }
+function isProg(c){ const p=store.prog[c.id]; return !!(p && p.i>0 && c.script[p.i] && !c.script[p.i].end); }
 function rankOf(p){ return p>=.85?"資深大律師 Senior Counsel":p>=.65?"執業律師 Solicitor":p>=.4?"實習律師 Graduate":"法律系新生 Law Student"; }
 
 /* ---------- Hub ---------- */
-let filter = "all";
+let filter = "all", status = "all";
 function showHub(){
-  C=null; st=null; const bb=$("#backBtn"); if(bb) bb.hidden=true;
+  C=null; st=null; const bb=$("#backBtn"); if(bb) bb.hidden=true; const cp=$("#courtPlate"); if(cp) cp.hidden=true;
   document.querySelectorAll(".end,.cover,.sheet").forEach(x=>x.remove());
   const old=$("#hub"); if(old) old.remove();
   const total = QCF.cases.reduce((a,c)=>a+maxScore(c),0);
@@ -75,27 +117,32 @@ function showHub(){
     <div class="career"><div class="n">${got}</div><div class="grow"><div class="r">${rankOf(total?got/total:0)}</div>
       <div class="sub">已結案 ${done} / ${QCF.cases.length}・詞典 ${store.dict.length}</div><div class="bar"><i style="width:${total?Math.round(got/total*100):0}%"></i></div></div>
       <button class="pill" type="button" id="hubDict">詞典</button></div>
+    <div class="tabs" role="tablist" aria-label="案件狀態">${[["all","全部",QCF.cases.length],["prog","進行中",QCF.cases.filter(isProg).length],["done","已完成",done]].map(([k,t,n])=>`<button type="button" role="tab" data-s="${k}" aria-selected="${status===k}">${t}<b>${n}</b></button>`).join("")}</div>
     <div class="filters" role="toolbar" aria-label="篩選範疇">${cats.map(k=>`<button type="button" data-f="${k}" aria-pressed="${filter===k}">${k==="all"?"全部":CAT[k]}</button>`).join("")}</div>
     <div class="cases" id="caseList"></div>
     <p class="fine" style="padding:8px max(20px,env(safe-area-inset-left,0px)) 0;margin:0;font-size:12px;color:#7d86a8">所有案件取材自公開判詞，人名已更改，每題附判詞段落出處。遊戲用作學習，唔係法律意見；遇到真實問題請諮詢律師或 Legal Aid Queensland（1300 65 11 88）。<br>昆州判案錄 v${window.QCF_VERSION||"?"}（${window.QCF_BUILD||""}）</p>`;
   $("#app").append(h);
   const list=h.querySelector("#caseList");
-  QCF.cases.filter(c=>filter==="all"||c.cat===filter).forEach((c,ix)=>{
+  const shown=QCF.cases.filter(c=>(filter==="all"||c.cat===filter)&&(status==="all"||(status==="prog"?isProg(c):store.best[c.id]!==undefined)));
+  if(!shown.length){ const e=document.createElement("p"); e.className="empty"; e.style.padding="8px 0"; e.textContent=status==="prog"?"而家冇進行中嘅案件。揀一單開始啦。":status==="done"?"仲未完成任何案件。":"呢個分類暫時冇案件。"; list.append(e); }
+  shown.forEach((c,ix)=>{
     const b=document.createElement("button"); b.type="button"; b.className="case";
     const best=store.best[c.id], prog=store.prog[c.id];
-    const status = best!==undefined ? `最佳 ${best} / ${maxScore(c)}` : (prog&&prog.i>0 ? "進行中" : "未開始");
+    const chNow = prog&&prog.i>0 ? (c.script.slice(0,prog.i+1).filter(n=>n.ch).pop()||{}).ch : null;
+    const status = (isProg(c) ? `進行中・${chNow||""}` : "") + (best!==undefined ? `${isProg(c)?"　":""}最佳 ${best} / ${maxScore(c)}` : (isProg(c)?"":"未開始"));
     b.innerHTML=`<span class="no">${String(QCF.cases.indexOf(c)+1).padStart(2,"0")}</span>
       <span class="t">${c.title}</span>
       <span class="meta"><span class="chip ${c.cat}">${CAT[c.cat]}</span><span>${c.court}</span><span class="best">${status}</span></span>
       <span class="cite">${c.cite}</span>`;
     b.onclick=()=>openCase(c); list.append(b);
   });
-  (window.QCF_SOON||[]).filter(s=>filter==="all"||s.cat===filter).forEach(s=>{
+  (window.QCF_SOON||[]).filter(s=>status==="all"&&(filter==="all"||s.cat===filter)).forEach(s=>{
     const d=document.createElement("div"); d.className="case soon";
     d.innerHTML=`<span class="no">··</span><span class="t">${s.title}</span><span class="meta"><span class="chip ${s.cat}">${CAT[s.cat]}</span><span>即將推出</span></span>`;
     list.append(d);
   });
   h.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{filter=b.dataset.f;showHub()});
+  h.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{status=b.dataset.s;showHub()});
   h.querySelector("#hubDict").onclick=openDict;
   $("#chap").textContent="昆州判案錄";
 }
@@ -135,8 +182,14 @@ function render(){
   const n=S[st.i]; const panel=$("#panel"); panel.innerHTML="";
   const c=chapterOf(st.i); if(c){ $("#chap").textContent=`${c.ch}・${c.title}`; setBg(c.bg); }
   if(n.bg) setBg(n.bg);
+  const L=showCourt();
+  if(L && L.c.bg && (st.bg==="bg_court"||st.bg==="bg_magistrates"||n.court)) setBg(L.c.bg);
+  const prevCode=st.i>0?courtAt(st.i-1):null, curCode=courtAt(st.i);
+  const moved = curCode && curCode!==prevCode && !n.ch;
   $("#chapcard").hidden=true;
-  if(n.ch){ setPortrait(null); const cc=$("#chapcard"); cc.innerHTML=`<div class="num">${n.ch}</div><h2>${n.title}</h2><p>${n.sub||""}</p>`; cc.hidden=false; panel.append(nextBtn()); save(); return; }
+  if(n.ch){ setPortrait(null); const cc=$("#chapcard"); cc.innerHTML=`<div class="num">${n.ch}</div><h2>${n.title}</h2><p>${n.sub||""}</p>${L?`<div class="cc-court"><span>${L.r.zh}</span>${L.c.zh}・${L.c.bench}</div>`:""}`; cc.hidden=false; panel.append(nextBtn()); save(); return; }
+  if(moved){ const L2=courtLabel(curCode); const b=document.createElement("div"); b.className="courtmove tier"+L2.r.tier;
+    b.innerHTML=`<span class="cm-arrow">⇧</span><div><b>案件轉到：${L2.c.zh}</b><small>${L2.r.zh}・${L2.c.en}・${L2.c.bench}</small></div>`; panel.append(b); }
   if(n.end) return showEnd();
   if(n.predict) return renderPredict(n.predict);
   setPortrait(n.img||null);

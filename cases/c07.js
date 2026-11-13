@@ -47,10 +47,10 @@ const S = [
  {multi:3, q:"揀 3 張證據，最能支持「銀行唔可以執行擔保」。", img:"g_wife", pool:["G1","G2","G3","G4","G5","G6","G7"], right:["G3","G4","G6"], half:["G2"],
    fb:"法院認為：Jen 其實唔明白交易嘅效果（G4）；佢係{{volunteer}}，冇實際得益（G6）；銀行冇向佢解釋、亦唔知佢有冇獨立意見（G3）。G2 解釋佢點解會信丈夫，亦相關。", ref:"判詞第 31、42–43 段"},
 
- {ch:"第三幕", title:"三級法院", sub:"同一份擔保，三個答案", bg:"bg_court"},
+ {court:"nswsc:trial", ch:"第三幕", title:"三級法院", sub:"同一份擔保，三個答案", bg:"bg_court"},
  {who:"旁白", text:"一審，新州最高法院 Young J：引用 Yerkey v Jones，宣佈擔保對 Jen 冇約束力。", ref:"判詞第 6、11–13 段"},
- {who:"旁白", text:"上訴庭推翻：認為 Yerkey 原則「唔應再喺新州適用」，判銀行勝訴。", ref:"判詞第 14–16 段"},
- {who:"法官", img:"c_judge", judge:1, text:"本庭要決定：Yerkey v Jones 嘅原則喺今日仲適唔適用？"},
+ {court:"nswca:appeal", who:"旁白", text:"上訴庭推翻：認為 Yerkey 原則「唔應再喺新州適用」，判銀行勝訴。", ref:"判詞第 14–16 段"},
+ {court:"hca:final", who:"法官", img:"c_judge", judge:1, text:"本庭要決定：Yerkey v Jones 嘅原則喺今日仲適唔適用？"},
  {q:"高等法院列出嘅四個條件，以下邊個**唔係**？", img:"c_judge", opts:[
    {t:"擔保人實際上唔明白交易嘅意義同效果", fb:"呢個係條件之一。"},
    {t:"擔保人冇從交易得到任何利益", fb:"呢個係條件之一（即係 volunteer）。"},

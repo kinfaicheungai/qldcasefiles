@@ -35,7 +35,7 @@ const S = [
  ]},
  {who:"May 姐", img:"c_mentor", text:"審裁處會睇{{four}}：財務、家庭居住、社交、雙方承諾。全部加埋一齊判斷。"},
 
- {ch:"第二幕", title:"審裁處聆訊", sub:"Administrative Appeals Tribunal", bg:"bg_qcat"},
+ {court:"aat:review", ch:"第二幕", title:"審裁處聆訊", sub:"Administrative Appeals Tribunal", bg:"bg_qcat"},
  {who:"旁白", text:"2018 年 8 月，{{aat}}維持拒簽。申請人向聯邦法院申請{{judicialrev}}，法院將案件{{remitted2}}審裁處重新決定。", ref:"AAT 決定摘要"},
  {who:"擔保人", img:"v_sponsor", text:"我哋有聯名戶口，信都寄去同一個地址。", gain:"V2"},
  {who:"旁白", text:"親友提供咗{{thirdparty}}，近親都認可呢段婚姻。", gain:"V3"},

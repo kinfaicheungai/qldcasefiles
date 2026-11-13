@@ -26,7 +26,7 @@ const E = {
   D8:{t:"等咗好耐先申請",s:"against",side:"支持 Frank",d:"Frank 指 Helen 拖咗大約 18 個月先申請；而 Helen 係 2022 年初先知道 Frank 知佢新住址。",ref:"判詞第 15、34 段"}
 };
 const S = [
- {ch:"第一幕", title:"保護令申請", sub:"Gympie 裁判法院", bg:"bg_magistrates"},
+ {court:"mag:trial", ch:"第一幕", title:"保護令申請", sub:"Gympie 裁判法院", bg:"bg_magistrates"},
  {who:"旁白", text:"2022 年 9 月，Gympie 裁判法院。May 姐帶你嚟旁聽一單家暴{{po}}聆訊。"},
  {who:"May 姐", img:"c_mentor", text:"記住：保護令係民事程序，唔係刑事檢控。不過如果有人違反保護令，就係刑事罪。法例係{{dvpa}}。"},
  {who:"旁白", text:"{{aggrieved}}：申請人 Helen，答辯人 Frank。兩人 2010 年識，2011 年結婚，2017 年分開過又復合，2020 年 9 月最終分開。", ref:"判詞第 5 段"},
@@ -71,7 +71,7 @@ const S = [
  ]},
  {who:"旁白", text:"Frank 請咗大律師，向區域法院上訴。Helen 繼續冇律師。"},
 
- {ch:"第四幕", title:"上訴", sub:"District Court of Queensland", bg:"bg_court"},
+ {court:"dc:appeal", ch:"第四幕", title:"上訴", sub:"District Court of Queensland", bg:"bg_court"},
  {who:"法官", img:"c_judge", judge:1, text:"本上訴係{{rehearing}}，根據原審記錄處理。", ref:"判詞第 7 段"},
  {who:"旁白", text:"上訴人一方最後放棄挑戰「答辯人做過家暴」嘅裁決。", ref:"判詞第 32 段"},
  {q:"咁上訴爭緊咩？", img:"c_judge", opts:[

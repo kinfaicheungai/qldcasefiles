@@ -48,7 +48,7 @@ const S = [
  {who:"旁白", text:"交收日一再延期。2018 年 4 月，Al 親自睇檔案；5 月 4 日，買家律師列出 35 項報告問題。", ref:"判詞第 8、59 段"},
  {who:"旁白", text:"2018 年 5 月 10 日下晝，即係交收前一日，買家宣佈{{termination}}兩份合約。賣方唔接受，堅持合約有效；5 月 18 日，賣方反過嚟終止租賃管理權合約。", gain:"B5", ref:"判詞第 8、21 段"},
 
- {ch:"第三幕", title:"一審", sub:"District Court of Queensland", bg:"bg_court"},
+ {court:"dc:trial", ch:"第三幕", title:"一審", sub:"District Court of Queensland", bg:"bg_court"},
  {who:"旁白", text:"雙方鬧上區域法院。買家話被誤導，要求退返按金；賣方提出{{counterclaim}}，追討按金餘額同損失。Dot 仲係買方嘅{{guarantor}}。"},
  {q:"根據 ACL，要成功索償，淨係證明「宣傳冊寫錯」夠唔夠？", img:"c_judge", opts:[
    {t:"夠，寫錯就要賠", fb:"錯。誤導只係第一步。"},
@@ -63,7 +63,7 @@ const S = [
  ]},
  {who:"旁白", text:"賣方上訴。呢場官司打咗好多年，上訴庭呢份判詞已經係同一宗案嘅第 5 份（No 5）。"},
 
- {ch:"第四幕", title:"上訴庭", sub:"Queensland Court of Appeal", bg:"bg_court"},
+ {court:"qca:appeal", ch:"第四幕", title:"上訴庭", sub:"Queensland Court of Appeal", bg:"bg_court"},
  {who:"法官", img:"c_judge", judge:1, text:"本庭重新點數：148 個物業之中，3 份報告唔見，10 份未有齊簽，共 13 份有問題。宣傳冊嘅陳述的確屬誤導。", gain:"B6"},
  {who:"法官", img:"c_judge", judge:1, text:"但問題係：買方公司係咪真係**依賴**咗呢個陳述先簽約？Dot 係公司唯一董事，而佢嘅證供——", quote:{en:"“extraordinarily unhelpful”", zh:"「極之冇幫助」", src:"Dalton JA 對買方董事證供嘅評價，判詞第 46 段"}},
  {multi:3, q:"揀 3 張證據，最能推翻買家嘅「依賴」同「因果關係」。", img:"c_judge", pool:["B1","B2","B3","B4","B5","B6"], right:["B2","B3","B4"], half:["B5"],

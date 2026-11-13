@@ -73,7 +73,7 @@ const S = [
  ]},
  {who:"May 姐", img:"c_mentor", text:"證據夾差唔多齊。下一站：法庭。"},
 
- {ch:"第三幕", title:"開庭", sub:"District Court of Queensland・布里斯本", bg:"bg_court"},
+ {court:"dc:trial", ch:"第三幕", title:"開庭", sub:"District Court of Queensland・布里斯本", bg:"bg_court"},
  {who:"旁白", text:"{{district}}，2025 年 1 月至 2 月，一共審咗三日。Ed 係{{applicant}}。"},
  {who:"法官", img:"c_judge", judge:1, text:"本庭會按照高等法院 Singer v Berghouse 確立嘅{{twostage}}處理今次申請。"},
  {q:"考考你：第一階段要答咩問題？", img:"c_judge", opts:[

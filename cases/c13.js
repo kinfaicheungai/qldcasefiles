@@ -39,15 +39,15 @@ const S = [
  {who:"旁白", text:"隔籬嘅商場公共區由清潔公司負責，每 15 至 20 分鐘巡一次，最後一次係 12:10。", gain:"S5"},
  {who:"Woolworths 代表", img:"inj_mgr", text:"冇人知條薯條幾時跌落地。可能係佢跣親前一兩分鐘先有人跌低，咁就算我哋有巡查都發現唔到。", gain:"S4"},
  {who:"Woolworths 代表", img:"inj_mgr", text:"而且係午飯時間，人人拎住食物行嚟行去。", gain:"S7"},
- {q:"一審區域法院點判？", img:"c_judge", opts:[
+ {court:"nswdc:trial", q:"一審區域法院點判？", img:"c_judge", opts:[
    {t:"Kate 贏，判賠 $580,299.12", ok:1, fb:"啱！一審認為 Woolworths 疏忽，判賠超過五十八萬。對商場業主嘅申索就被駁回。不過，一審冇處理因果關係。", ref:"判詞第 2、11–12 段", terms:["damages"]},
    {t:"Woolworths 贏，因為冇人知薯條幾時跌", fb:"呢個係上訴庭嘅判法。"},
    {t:"商場業主要賠", fb:"一審駁回咗對業主嘅申索。"}
  ]},
- {who:"旁白", text:"Woolworths 上訴。新州上訴庭推翻判決：Kate 證明唔到{{causation}}，因為冇證據顯示就算有巡查，都會及時發現條薯條。", ref:"判詞第 3、12–15 段"},
+ {court:"nswca:appeal", who:"旁白", text:"Woolworths 上訴。新州上訴庭推翻判決：Kate 證明唔到{{causation}}，因為冇證據顯示就算有巡查，都會及時發現條薯條。", ref:"判詞第 3、12–15 段"},
  {who:"May 姐", img:"c_mentor", text:"呢度用嘅係{{butfor}}：如果 Woolworths 有合理巡查，Kate 仲會唔會跣親？", terms:["cla"]},
 
- {ch:"第三幕", title:"或然率", sub:"High Court of Australia", bg:"bg_court"},
+ {court:"hca:final", ch:"第三幕", title:"或然率", sub:"High Court of Australia", bg:"bg_court"},
  {who:"旁白", text:"Kate 獲{{specialleave}}，上訴到高等法院。"},
  {q:"冇人見到薯條幾時跌，Kate 仲有冇機會贏？", img:"c_judge", opts:[
    {t:"冇，冇直接證據就輸", fb:"呢個係上訴庭同異議法官嘅睇法。"},
